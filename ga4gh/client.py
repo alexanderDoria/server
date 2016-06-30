@@ -359,7 +359,7 @@ class AbstractClient(object):
             SearchFeaturesResponse object.
         """
         request = protocol.SearchFeaturesRequest()
-        request.featureSetId = featureSetId
+        request.feature_set_id = featureSetId
         request.parentId = parentId
         request.referenceName = referenceName
         request.start = start
