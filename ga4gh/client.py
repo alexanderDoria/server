@@ -364,7 +364,7 @@ class AbstractClient(object):
         request.reference_name = referenceName
         request.start = start
         request.end = end
-        request.feature_types = featureTypes
+        request.feature_types.extend(featureTypes)
         request.page_size = self._pageSize
         return self._runSearchRequest(
             request, "features",
