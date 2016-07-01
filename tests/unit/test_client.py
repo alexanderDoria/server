@@ -133,8 +133,10 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
         request.start = self.start
         request.end = self.end
         request.feature_types.append(self.feature)
-        
-        self.httpClient.searchFeatures(self.featureSetId, parentId=self.parentId, referenceName=self.referenceName, start=self.start, end=self.end, featureTypes=[self.feature])
+        self.httpClient.searchFeatures(
+            self.featureSetId, parentId=self.parentId,
+            referenceName=self.referenceName, start=self.start,
+            end=self.end, featureTypes=[self.feature])
         self.httpClient._runSearchRequest.assert_called_once_with(
             request, "features", protocol.SearchFeaturesResponse)
 
